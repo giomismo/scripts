@@ -13,9 +13,7 @@ def usage():
     sys.exit(1)
 
 if __name__  == "__main__":
-    if 1 == len(sys.argv):
-        usage()
-    elif 3 == len(sys.argv):
+    if 3 == len(sys.argv):
         [command, username, database] = sys.argv
         table = "*"
         filename = "{}_{}.sql".format(username,database)
@@ -23,7 +21,8 @@ if __name__  == "__main__":
         [command, username, database, table] = sys.argv
         filename = "{}_{}_{}.sql".format(username,database, table)
     else:
-        print "ERROR: 3 arguments are requiered\n"
+        if (1 == len(sys.argv)):
+            print "ERROR: 3 arguments are requiered\n"
         usage()
 
     fd = file(filename, "w")
