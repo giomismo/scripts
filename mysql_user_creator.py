@@ -17,7 +17,7 @@ if __name__  == "__main__":
         [command, username, database] = sys.argv
         table = "*"
         filename = "{}_{}.sql".format(username,database)
-    elif 3 == len(sys.argv):
+    elif 4 == len(sys.argv):
         [command, username, database, table] = sys.argv
         filename = "{}_{}_{}.sql".format(username,database, table)
     else:
